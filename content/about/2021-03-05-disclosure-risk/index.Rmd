@@ -1,0 +1,17 @@
+---
+title: Disclosure Risk
+author: Shaina Trevino
+date: '2021-03-05'
+slug: []
+categories: []
+tags: []
+---
+
+begin blog post here 
+
+```{r}
+library(tidyverse)
+
+hist(mtcars$mpg)
+```
+

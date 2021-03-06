@@ -1,0 +1,23 @@
+---
+title: my example post
+author: Me
+date: '2021-03-05'
+slug: []
+categories: []
+tags: []
+subtitle: ''
+excerpt: ''
+images: ~
+series: ~
+layout: single
+---
+
+Here's some text
+
+```{r message = FALSE}
+library(tidyverse)
+ggplot(mtcars, aes(disp, mpg)) +
+  geom_point() +
+  geom_smooth() +
+  theme_minimal()
+```
