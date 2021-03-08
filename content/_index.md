@@ -2,18 +2,15 @@
 action_label: Read More &rarr;
 action_link: /about
 action_type: text
-description: This is the documentation site for the Hugo Apéro theme. Inside it, you'll
-  find how to get started building a new site with this theme. You'll learn a bit
-  about Hugo, and a lot about what makes this theme unique and, we hope, fun to get
-  to know. Bon apéro!
+description: I am a PhD candidate in the Prevention Science Program at University of Oregon. My interests are in data science and quantitative research methodology with a focus on early childhood development and youth violence prevention. Currently, I am involved in projects that focus on privacy preserving data publishing, student and youth safety and well-being, and parent-child emotion and self-regulation processes. I enjoy applying my methodological skills to new challenges and collaborating with others to discover new, innovative ideas. Aside from research, I love spending time outdoors and kayaking the beautiful lakes and rivers across Oregon. 
 image_left: false
 images:
-- img/isola.jpg
+- img/outside-sun-crop.jpg
 show_action_link: true
-show_social_links: true
-subtitle: A Hugo theme you'll want to hang out with
+show_social_links: false #change to true to show social icons - github facebook
+subtitle: Prevention Science PhD Student at the University of Oregon
 text_align_left: true
-title: Hugo Apéro
+title: Shaina Trevino
 type: home
 ---
 
