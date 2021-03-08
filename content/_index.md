@@ -8,7 +8,8 @@ images:
 - img/outside-sun-crop.jpg
 show_action_link: true
 show_social_links: false #change to true to show social icons - github facebook
-subtitle: Prevention Science PhD Student at the University of Oregon
+subtitle: Prevention Science PhD Student 
+Prevention Science Institute, University of Oregon
 text_align_left: true
 title: Shaina Trevino
 type: home
