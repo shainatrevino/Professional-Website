@@ -438,11 +438,11 @@ aft <- data.frame(table(sim_df$days_absent)) %>%
 par(mfrow = c(4,1))
 knitr::kable(aft[,1:14]) %>% 
   kableExtra::kable_styling( position = "center")
-knitr::kable(aft[,15:42]) %>%
+knitr::kable(aft[,15:32]) %>%
   kableExtra::kable_styling( position = "center")
-knitr::kable(aft[,43:55]) %>%
+knitr::kable(aft[,33:49]) %>%
   kableExtra::kable_styling( position = "center")
-knitr::kable(aft[,56:70]) %>%
+knitr::kable(aft[,50:70]) %>%
   kableExtra::kable_styling( position = "center")
 
 ```
