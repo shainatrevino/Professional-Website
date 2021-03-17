@@ -1,7 +1,7 @@
 ---
 author: Shaina Trevino
 cascade:
-  author: The R Markdown Team @RStudio
+  author: Shaina Trevino
   show_author_byline: true
   show_comments: true
   show_post_date: true
@@ -17,7 +17,7 @@ show_post_date: true
 show_post_thumbnail: true
 sidebar:
   author: Shaina Trevino
-  description: "This is a fully featured blog that supports categories,\ntags, series,
+  description: "**This site is currently under construction** \n\nThis is a fully featured blog that supports categories,\ntags, series,
     and pagination. Even this sidebar offers \na ton of customizations.\n\nCheck out
     the _index.md file in the /blog folder \nto edit this content. \n"
   show_sidebar_adunit: true

@@ -10,12 +10,6 @@ excerpt: 'This blog post walks through one example of reducing disclosure risk f
 images: ~
 series: ~
 layout: single
-output:
-  html_document:
-    toc: true
-    toc_float: true
-    theme: united
-    highlight: tango
 ---
 
 ```{r setup, include=FALSE}
