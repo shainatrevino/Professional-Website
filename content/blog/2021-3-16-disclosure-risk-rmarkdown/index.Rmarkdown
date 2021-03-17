@@ -1,23 +1,16 @@
 ---
-title: Disclosure Risk for Student Microdata
-author: Shaina Trevino
-date: '2021-03-16'
-slug: []
-categories: []
-tags: []
-subtitle: ''
-excerpt: 'This blog post walks through one example of reducing disclosure risk for student microdata under FERPA. Specifically, assessing re-identification risk and applying statistical disclosure control for a simulated, student data set with the sdcMicro R package'
-images: ~
-series: ~
+title: "Disclosure Risk for Student Microdata"
+subtitle: ""
+excerpt: "This blog post walks through one example of reducing disclosure risk for student microdata under FERPA. Specifically, assessing re-identification risk and applying statistical disclosure control for a simulated, student data set with the sdcMicro R package"
+date: 2021-03-16
+author: "Shaina Trevino"
+draft: false
+images:
+series:
+tags:
+categories:
 layout: single
-output:
-  blogdown::html_document:
-    toc: true
-    toc_float: true
-    theme: united
-    highlight: tango
 ---
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
@@ -43,7 +36,7 @@ For our purposes, we will be walking through the process of statistical disclosu
 
 + Census data (i.e., if an intruder knows who is in the data, disclosure is more likely) 
 
-Specifically, this blog will explain the basic steps of assessing disclosure risk and applying statistical disclosure control techniques with the `{sdcMicro}` package and briefly mention how to re-assess disclosure risk and data utility after transformation when releasing FERPA-compliant student micro-data. Code and data available on [GitHub](LINKREPO)
+Specifically, this blog will explain the basic steps of assessing disclosure risk and applying statistical disclosure control techniques with the `{sdcMicro}` package and briefly mention how to re-assess disclosure risk and data utility after transformation when releasing FERPA-compliant student micro-data. Code and data available on [GitHub](https://github.com/shainatrevino/Professional-Website)
 
 ## Data Description
 
