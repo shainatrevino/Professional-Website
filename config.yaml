@@ -26,11 +26,11 @@ markup:
   highlight:
     style: github
   tableOfContents:
-    endLevel: 2
-    ordered: no
+    endLevel: 3
     startLevel: 2
 params:
   custom_theme: ''
+  custom_css: [custom.css]
   customheadingFontFamily: Fraunces
   customtextFontFamily: Commissioner
   description: A modern, beautiful, and easily configurable blog theme for Hugo.

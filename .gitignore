@@ -34,3 +34,11 @@ vignettes/*.pdf
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
+
+content/blog/2021-3-16-disclosure-risk-rmarkdown/.DS_Store
+
+layouts/_default/.DS_Store
+
+layouts/.DS_Store
+
+static/.DS_Store
