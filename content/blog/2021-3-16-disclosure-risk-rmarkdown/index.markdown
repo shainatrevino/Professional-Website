@@ -789,6 +789,7 @@ table(sim_df$days_absent)
    <th style="text-align:right;"> 11 </th>
    <th style="text-align:right;"> 12 </th>
    <th style="text-align:right;"> 13 </th>
+   <th style="text-align:right;"> 14 </th>
   </tr>
  </thead>
 <tbody>
@@ -807,6 +808,7 @@ table(sim_df$days_absent)
    <td style="text-align:right;"> 183 </td>
    <td style="text-align:right;"> 161 </td>
    <td style="text-align:right;"> 142 </td>
+   <td style="text-align:right;"> 140 </td>
   </tr>
 </tbody>
 </table>
@@ -814,7 +816,6 @@ table(sim_df$days_absent)
 <table class="table" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
-   <th style="text-align:right;"> 14 </th>
    <th style="text-align:right;"> 15 </th>
    <th style="text-align:right;"> 16 </th>
    <th style="text-align:right;"> 17 </th>
@@ -832,11 +833,11 @@ table(sim_df$days_absent)
    <th style="text-align:right;"> 29 </th>
    <th style="text-align:right;"> 30 </th>
    <th style="text-align:right;"> 31 </th>
+   <th style="text-align:right;"> 32 </th>
   </tr>
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:right;"> 140 </td>
    <td style="text-align:right;"> 94 </td>
    <td style="text-align:right;"> 41 </td>
    <td style="text-align:right;"> 36 </td>
@@ -854,6 +855,7 @@ table(sim_df$days_absent)
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 17 </td>
    <td style="text-align:right;"> 12 </td>
+   <td style="text-align:right;"> 16 </td>
   </tr>
 </tbody>
 </table>
@@ -861,7 +863,6 @@ table(sim_df$days_absent)
 <table class="table" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
-   <th style="text-align:right;"> 32 </th>
    <th style="text-align:right;"> 33 </th>
    <th style="text-align:right;"> 34 </th>
    <th style="text-align:right;"> 35 </th>
@@ -878,11 +879,13 @@ table(sim_df$days_absent)
    <th style="text-align:right;"> 46 </th>
    <th style="text-align:right;"> 47 </th>
    <th style="text-align:right;"> 48 </th>
+   <th style="text-align:right;"> 49 </th>
+   <th style="text-align:right;"> 50 </th>
+   <th style="text-align:right;"> 51 </th>
   </tr>
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:right;"> 16 </td>
    <td style="text-align:right;"> 12 </td>
    <td style="text-align:right;"> 20 </td>
    <td style="text-align:right;"> 21 </td>
@@ -899,6 +902,9 @@ table(sim_df$days_absent)
    <td style="text-align:right;"> 8 </td>
    <td style="text-align:right;"> 8 </td>
    <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
   </tr>
 </tbody>
 </table>
@@ -906,9 +912,6 @@ table(sim_df$days_absent)
 <table class="table" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
-   <th style="text-align:right;"> 49 </th>
-   <th style="text-align:right;"> 50 </th>
-   <th style="text-align:right;"> 51 </th>
    <th style="text-align:right;"> 52 </th>
    <th style="text-align:right;"> 53 </th>
    <th style="text-align:right;"> 54 </th>
@@ -931,9 +934,6 @@ table(sim_df$days_absent)
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 1 </td>
    <td style="text-align:right;"> 5 </td>
    <td style="text-align:right;"> 4 </td>
    <td style="text-align:right;"> 7 </td>

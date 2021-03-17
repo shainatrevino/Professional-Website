@@ -436,13 +436,13 @@ aft <- data.frame(table(sim_df$days_absent)) %>%
   pivot_wider(names_from = Var1, values_from = Freq)
 
 par(mfrow = c(4,1))
-knitr::kable(aft[,1:14]) %>% 
+knitr::kable(aft[,1:15]) %>% 
   kableExtra::kable_styling( position = "center")
-knitr::kable(aft[,15:32]) %>%
+knitr::kable(aft[,16:33]) %>%
   kableExtra::kable_styling( position = "center")
-knitr::kable(aft[,33:49]) %>%
+knitr::kable(aft[,34:52]) %>%
   kableExtra::kable_styling( position = "center")
-knitr::kable(aft[,50:70]) %>%
+knitr::kable(aft[,53:70]) %>%
   kableExtra::kable_styling( position = "center")
 
 ```
