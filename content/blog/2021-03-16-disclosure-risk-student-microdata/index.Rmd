@@ -7,7 +7,7 @@ categories: []
 tags: []
 subtitle: ''
 excerpt: 'This blog post walks through one example of reducing disclosure risk for student microdata under FERPA. Specifically, assessing re-identification risk and applying statistical disclosure control for a simulated, student data set with the sdcMicro R package'
-images: ~
+images: data-privacy.jpeg
 series: ~
 layout: single
 output:
