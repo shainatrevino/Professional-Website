@@ -1,0 +1,20 @@
+#TableOfContents {
+  font-size: 0.9rem;
+}
+#TableOfContents ul {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#TableOfContents a {
+  text-decoration: none;
+  color: #999493;
+  -webkit-transition: all 50ms ease-in-out;
+  transition: all 50ms ease-in-out;
+}
+
+#TableOfContents a:hover {
+  color: #CE3D15;
+}
