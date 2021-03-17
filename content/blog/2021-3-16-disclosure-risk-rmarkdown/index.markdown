@@ -10,6 +10,7 @@ series:
 tags:
 categories:
 layout: single
+toc: true
 ---
 <script src="{{< blogdown/postref >}}index_files/kePrint/kePrint.js"></script>
 <link href="{{< blogdown/postref >}}index_files/lightable/lightable.css" rel="stylesheet" />
@@ -44,7 +45,7 @@ layout: single
 
 # Overview
 
-Under the Family Educational Rights and Privacy Act (FERPA), schools can release data to researchers without parent or student consent if the data is released under a [FERPA study exception](https://studentprivacy.ed.gov/sites/default/files/resource_document/file/FERPA%20Exceptions_HANDOUT_portrait.pdf) with a data sharing agreement or if the data has been properly de-identified. Proper data de-identification involves removing or altering all personally identifiable information (PII) from the data to minimize the disclosure risk of individuals. It is important to note that PII includes not only the obvious identifiable information about individuals (e.g., direct identifiers; names, student IDs, social security number, date of birth, address), but also any other information that can be used to identify an individual alone or in combination with other information that can be linked to the data (i.e., indirect identifiers). Thus, simply removing direct identifiers does not properly de-identify the data. Careful attention must be payed to the identification and altering of indirect identifiers to adequately reduce disclosure risk. 
+Under the Family Educational Rights and Privacy Act (FERPA), schools can release data to researchers without parent or student consent if the data is released under a [FERPA study exception](https://studentprivacy.ed.gov/sites/default/files/resource_document/file/FERPA%20Exceptions_HANDOUT_portrait.pdf) with a data sharing agreement or if the data has been properly de-identified. Proper data de-identification involves removing or altering all personally identifiable information (PII) from the data to minimize the disclosure risk of individuals. It is important to note that PII includes not only the obvious identifiable information about individuals (e.g., direct identifiers; names, student IDs, social security number, date of birth, address), but also any other information that can be used to identify an individual alone or in combination with other information that can be linked to the data (i.e., indirect identifiers). Thus, removing direct identifiers alone does not fully de-identify the data. Careful attention must be payed to the identification and altering of indirect identifiers to adequately reduce disclosure risk. 
 
 A disclosure occurs when an intruder can reveal the identity of an individual in the data set or learn confidential information about them. Thus, measuring disclosure risk involves calculating risk metrics related to an intruder's ability to identify individuals (i.e., re-identification risk). After assessing the re-identification risk of the original data, statistical disclosure control techniques can be applied to reduce disclosure risk to an appropriate level. There are no specific guidelines or methods to properly de-identify data because the re-identification risk varies depending on the structure, context, and purpose of the data. There may also be other federal, state, or local laws that require different levels of de-identification. 
 
@@ -60,21 +61,21 @@ For our purposes, we will be walking through the process of statistical disclosu
 
 + Census data (i.e., if an intruder knows who is in the data, disclosure is more likely) 
 
-Specifically, this blog will explain the basic steps of assessing disclosure risk and applying statistical disclosure control techniques with the `{sdcMicro}` package and briefly mention how to re-assess disclosure risk and data utility after transformation when releasing FERPA-compliant student micro-data. Code and data available on [GitHub](https://github.com/shainatrevino/Professional-Website)
+This blog post will explain the basic steps of assessing disclosure risk and applying statistical disclosure control techniques with the **{sdcMicro}** package and briefly mention how to re-assess disclosure risk and data utility after transformation when releasing FERPA-compliant student micro-data. Code and data available on [GitHub](https://github.com/shainatrevino/Professional-Website)
 
 ## Data Description
 
-This data set was simulated to represent the distributions of administrative student variables that a researcher would potentially request access to. Thus, distributions and descriptive statistics represent a student population, however, relationships (e.g., correlations) among variables are not representative, nor realistic, and should not be interpreted. 
+The data used for this post was simulated to represent the distributions of administrative student variables that may be of interest to researchers (and to which they would potentially request access). Distributions and descriptive statistics represent a student population; however, relationships (e.g., correlations) among variables are not representative, nor realistic, and should not be interpreted. Rather, the data used her are purely for illustrative purposes. 
 
 When possible, the variables selected for de-identification and release should be limited to those necessary for data analysis in order to minimize disclosure risk and maximize data utility. Our data set includes a sample of 25,000 students and 13 variables including: 
 
 + `id`: study-specific randomized ID number for each student
 
-+ `grade_level`: student's grade level
++ `grade_level`: student's enrolled grade level
 
-+ `sex`: student sex
++ `sex`: student's coded sex
 
-+ `race`: student race/ethnicity
++ `race`: student coded race/ethnicity
 
 + `gpa`: student's unweighted grade point averages 
 
@@ -82,7 +83,7 @@ When possible, the variables selected for de-identification and release should b
 
 + `disability`: student flagged with a disability (i.e., individual education plan)
 
-+ `dis_cat`: student disability type
++ `dis_cat`: student's specific identified disability type
 
 + `lang`: student first language
 
@@ -94,12 +95,13 @@ When possible, the variables selected for de-identification and release should b
 
 + `days_absent`: total number of days absent
 
-We will use the `import()` and `here()` function to import our data and tidy it with the `{tidyverse}` package (e.g., modifying character variables to factors and defining missing values). It is important to verify that all variables are classified correctly (e.g., numeric or factor) and missing values are defined as `NA`.  
+We will use the `import()` function from the [**{rio}**](https://github.com/leeper/rio) package along with the `here()` function from the [**here**](https://github.com/r-lib/here) package to import our data. We will then tidy our data with the [**{tidyverse}**](https://www.tidyverse.org) suite of packages (e.g., modifying character variables to factors and defining missing values). It is important to verify that all variables are classified correctly (e.g., numeric or factor) and missing values are defined as `NA`.  
 
 
 
 ```r
-sim_df <- rio::import(here::here("content/data", "sim_df.csv")) %>% #import data
+library(tidyverse)
+sim_df <- rio::import(here::here("content", "data", "sim_df.csv")) %>% #import data
   mutate_if(is.character, as.factor) %>% #transform characters to factors
   mutate_all(na_if, "") #transform blank cells to missing
 
@@ -248,18 +250,19 @@ head(ind_risk_df, 10)
 
 ```
 ## # A tibble: 10 x 10
-##       id grade_level sex   race  econ_dis disability dis_cat lang     risk    fk
-##    <int> <fct>       <fct> <fct> <fct>    <fct>      <fct>   <fct>   <dbl> <dbl>
-##  1     1 10th Grade  Fema~ White Yes      No         Not Ap~ Engl~ 0.00505   198
-##  2     2 5th Grade   Male  Hisp~ No       No         Not Ap~ Engl~ 0.0185     54
-##  3     3 9th Grade   Fema~ Hisp~ Yes      Yes        Specif~ Span~ 1           1
-##  4     4 9th Grade   Male  White No       No         Not Ap~ Engl~ 0.00535   187
-##  5     5 6th Grade   Male  White No       Yes        Specif~ Engl~ 0.143       7
-##  6     6 4th Grade   Male  White Yes      No         Not Ap~ Engl~ 0.00568   176
-##  7     7 2nd Grade   Male  White No       No         Not Ap~ Engl~ 0.00549   182
-##  8     8 8th Grade   Fema~ Hisp~ No       No         Not Ap~ Span~ 0.0909     11
-##  9     9 4th Grade   Male  White No       No         Not Ap~ Engl~ 0.00549   182
-## 10    10 1st Grade   Male  Hisp~ No       No         Not Ap~ Engl~ 0.0208     48
+##       id grade_level sex    race     econ_dis disability
+##    <int> <fct>       <fct>  <fct>    <fct>    <fct>     
+##  1     1 10th Grade  Female White    Yes      No        
+##  2     2 5th Grade   Male   Hispanic No       No        
+##  3     3 9th Grade   Female Hispanic Yes      Yes       
+##  4     4 9th Grade   Male   White    No       No        
+##  5     5 6th Grade   Male   White    No       Yes       
+##  6     6 4th Grade   Male   White    Yes      No        
+##  7     7 2nd Grade   Male   White    No       No        
+##  8     8 8th Grade   Female Hispanic No       No        
+##  9     9 4th Grade   Male   White    No       No        
+## 10    10 1st Grade   Male   Hispanic No       No        
+## # … with 4 more variables: dis_cat <fct>, lang <fct>, risk <dbl>, fk <dbl>
 ```
 
 This will give you a data frame that includes the individual risk metrics (`risk`) and frequency counts for that combination for responses (`fk`). For example, we can see the 3rd observation is unique (i.e., only one person has this combination of responses in the data set) and has a 100% individual re-identification risk, whereas the 1st observation shares the same responses with 198 other individuals resulting in low re-identification risk (0.5%).
@@ -288,19 +291,20 @@ var_combos
 ```
 ## # A tibble: 3,238 x 9
 ## # Groups:   grade_level, sex, race, econ_dis, disability, dis_cat, lang [3,238]
-##    grade_level sex    race  econ_dis disability dis_cat       lang    risk  freq
-##    <fct>       <fct>  <fct> <fct>    <fct>      <fct>         <fct>  <dbl> <dbl>
-##  1 10th Grade  Female Asian No       No         Not Applicab~ Chin~ 1          1
-##  2 10th Grade  Female Asian No       No         Not Applicab~ Engl~ 0.0909    11
-##  3 10th Grade  Female Asian No       No         Not Applicab~ Other 1          1
-##  4 10th Grade  Female Asian No       No         Not Applicab~ Span~ 0.25       4
-##  5 10th Grade  Female Asian No       Yes        Other         Other 1          1
-##  6 10th Grade  Female Asian No       Yes        Specific Lea~ Engl~ 1          1
-##  7 10th Grade  Female Asian No       Yes        Specific Lea~ Other 1          1
-##  8 10th Grade  Female Asian Yes      No         Not Applicab~ Engl~ 0.1       10
-##  9 10th Grade  Female Asian Yes      No         Not Applicab~ Span~ 1          1
-## 10 10th Grade  Female Asian Yes      Yes        Specific Lea~ Engl~ 0.333      3
-## # ... with 3,228 more rows
+##    grade_level sex    race  econ_dis disability dis_cat                     
+##    <fct>       <fct>  <fct> <fct>    <fct>      <fct>                       
+##  1 10th Grade  Female Asian No       No         Not Applicable              
+##  2 10th Grade  Female Asian No       No         Not Applicable              
+##  3 10th Grade  Female Asian No       No         Not Applicable              
+##  4 10th Grade  Female Asian No       No         Not Applicable              
+##  5 10th Grade  Female Asian No       Yes        Other                       
+##  6 10th Grade  Female Asian No       Yes        Specific Learning Disability
+##  7 10th Grade  Female Asian No       Yes        Specific Learning Disability
+##  8 10th Grade  Female Asian Yes      No         Not Applicable              
+##  9 10th Grade  Female Asian Yes      No         Not Applicable              
+## 10 10th Grade  Female Asian Yes      Yes        Specific Learning Disability
+## # … with 3,228 more rows, and 3 more variables: lang <fct>, risk <dbl>,
+## #   freq <dbl>
 ```
 The resulting data frame shows the 3,238 possible response combinations for our categorical indirect identifiers and the corresponding risk metrics. You can see that the first response combination is unique, whereas the second combination has 11 students with those responses. 
 
@@ -317,19 +321,20 @@ uniq
 ```
 ## # A tibble: 1,257 x 9
 ## # Groups:   grade_level, sex, race, econ_dis, disability, dis_cat, lang [1,257]
-##    grade_level sex    race  econ_dis disability dis_cat        lang   risk  freq
-##    <fct>       <fct>  <fct> <fct>    <fct>      <fct>          <fct> <dbl> <dbl>
-##  1 10th Grade  Female Asian No       No         Not Applicable Chin~     1     1
-##  2 10th Grade  Female Asian No       No         Not Applicable Other     1     1
-##  3 10th Grade  Female Asian No       Yes        Other          Other     1     1
-##  4 10th Grade  Female Asian No       Yes        Specific Lear~ Engl~     1     1
-##  5 10th Grade  Female Asian No       Yes        Specific Lear~ Other     1     1
-##  6 10th Grade  Female Asian Yes      No         Not Applicable Span~     1     1
-##  7 10th Grade  Female Black No       No         Not Applicable Russ~     1     1
-##  8 10th Grade  Female Black No       Yes        Specific Lear~ Other     1     1
-##  9 10th Grade  Female Black No       Yes        Speech/Langua~ Engl~     1     1
-## 10 10th Grade  Female Black Yes      Yes        Autism         Engl~     1     1
-## # ... with 1,247 more rows
+##    grade_level sex    race  econ_dis disability dis_cat                     
+##    <fct>       <fct>  <fct> <fct>    <fct>      <fct>                       
+##  1 10th Grade  Female Asian No       No         Not Applicable              
+##  2 10th Grade  Female Asian No       No         Not Applicable              
+##  3 10th Grade  Female Asian No       Yes        Other                       
+##  4 10th Grade  Female Asian No       Yes        Specific Learning Disability
+##  5 10th Grade  Female Asian No       Yes        Specific Learning Disability
+##  6 10th Grade  Female Asian Yes      No         Not Applicable              
+##  7 10th Grade  Female Black No       No         Not Applicable              
+##  8 10th Grade  Female Black No       Yes        Specific Learning Disability
+##  9 10th Grade  Female Black No       Yes        Speech/Language Impairments 
+## 10 10th Grade  Female Black Yes      Yes        Autism                      
+## # … with 1,247 more rows, and 3 more variables: lang <fct>, risk <dbl>,
+## #   freq <dbl>
 ```
 
 We already know from calculating the *k*-anonymity violations above that there are 1,257 unique individual responses in our data set. However, it is helpful to explore the pattern of unique responses to see which variables or response options are leading to high re-identification risk. 
@@ -348,19 +353,20 @@ risky
 ```
 ## # A tibble: 2,179 x 9
 ## # Groups:   grade_level, sex, race, econ_dis, disability, dis_cat, lang [2,179]
-##    grade_level sex    race  econ_dis disability dis_cat        lang   risk  freq
-##    <fct>       <fct>  <fct> <fct>    <fct>      <fct>          <fct> <dbl> <dbl>
-##  1 10th Grade  Female Asian No       No         Not Applicable Chin~ 1         1
-##  2 10th Grade  Female Asian No       No         Not Applicable Other 1         1
-##  3 10th Grade  Female Asian No       No         Not Applicable Span~ 0.25      4
-##  4 10th Grade  Female Asian No       Yes        Other          Other 1         1
-##  5 10th Grade  Female Asian No       Yes        Specific Lear~ Engl~ 1         1
-##  6 10th Grade  Female Asian No       Yes        Specific Lear~ Other 1         1
-##  7 10th Grade  Female Asian Yes      No         Not Applicable Span~ 1         1
-##  8 10th Grade  Female Asian Yes      Yes        Specific Lear~ Engl~ 0.333     3
-##  9 10th Grade  Female Black No       No         Not Applicable Other 0.25      4
-## 10 10th Grade  Female Black No       No         Not Applicable Russ~ 1         1
-## # ... with 2,169 more rows
+##    grade_level sex    race  econ_dis disability dis_cat                     
+##    <fct>       <fct>  <fct> <fct>    <fct>      <fct>                       
+##  1 10th Grade  Female Asian No       No         Not Applicable              
+##  2 10th Grade  Female Asian No       No         Not Applicable              
+##  3 10th Grade  Female Asian No       No         Not Applicable              
+##  4 10th Grade  Female Asian No       Yes        Other                       
+##  5 10th Grade  Female Asian No       Yes        Specific Learning Disability
+##  6 10th Grade  Female Asian No       Yes        Specific Learning Disability
+##  7 10th Grade  Female Asian Yes      No         Not Applicable              
+##  8 10th Grade  Female Asian Yes      Yes        Specific Learning Disability
+##  9 10th Grade  Female Black No       No         Not Applicable              
+## 10 10th Grade  Female Black No       No         Not Applicable              
+## # … with 2,169 more rows, and 3 more variables: lang <fct>, risk <dbl>,
+## #   freq <dbl>
 ```
 
 The resulting data frame shows the risk metrics for the 2,179 possible response combinations that are under our threshold. Similar to the above step, it can be helpful here to explore this data frame for patterns of risky responses to see if there are certain variables or response options that are most often leading to risky variable combinations. 
@@ -1295,7 +1301,7 @@ sdcobj_final
 ## Numerical key variables: gpa, iss_off, iss_days, subj_off, days_absent
 ## 
 ## Disclosure risk (~100.00% in original data):
-##   modified data: [0.00%; 99.80%]
+##   modified data: [0.00%; 97.80%]
 ## 
 ## Current Information Loss in modified data (0.00% in original data):
 ##   IL1: 18627.40
