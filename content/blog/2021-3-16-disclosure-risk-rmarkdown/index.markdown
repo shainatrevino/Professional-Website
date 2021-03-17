@@ -2,7 +2,7 @@
 title: "Disclosure Risk for Student Microdata"
 subtitle: ""
 excerpt: "This blog post walks through one example of reducing disclosure risk for student microdata under FERPA. Specifically, assessing re-identification risk and applying statistical disclosure control for a simulated, student data set with the sdcMicro R package"
-date: 2020-03-16
+date: 2021-03-16
 author: "Shaina Trevino"
 draft: false
 images:
@@ -37,6 +37,9 @@ layout: single
 <link href="{{< blogdown/postref >}}index_files/lightable/lightable.css" rel="stylesheet" />
 <script src="{{< blogdown/postref >}}index_files/kePrint/kePrint.js"></script>
 <link href="{{< blogdown/postref >}}index_files/lightable/lightable.css" rel="stylesheet" />
+<script src="{{< blogdown/postref >}}index_files/kePrint/kePrint.js"></script>
+<link href="{{< blogdown/postref >}}index_files/lightable/lightable.css" rel="stylesheet" />
+
 
 
 # Overview
@@ -786,12 +789,6 @@ table(sim_df$days_absent)
    <th style="text-align:right;"> 11 </th>
    <th style="text-align:right;"> 12 </th>
    <th style="text-align:right;"> 13 </th>
-   <th style="text-align:right;"> 14 </th>
-   <th style="text-align:right;"> 15 </th>
-   <th style="text-align:right;"> 16 </th>
-   <th style="text-align:right;"> 17 </th>
-   <th style="text-align:right;"> 18 </th>
-   <th style="text-align:right;"> 19 </th>
   </tr>
  </thead>
 <tbody>
@@ -810,12 +807,6 @@ table(sim_df$days_absent)
    <td style="text-align:right;"> 183 </td>
    <td style="text-align:right;"> 161 </td>
    <td style="text-align:right;"> 142 </td>
-   <td style="text-align:right;"> 140 </td>
-   <td style="text-align:right;"> 94 </td>
-   <td style="text-align:right;"> 41 </td>
-   <td style="text-align:right;"> 36 </td>
-   <td style="text-align:right;"> 38 </td>
-   <td style="text-align:right;"> 23 </td>
   </tr>
 </tbody>
 </table>
@@ -823,6 +814,12 @@ table(sim_df$days_absent)
 <table class="table" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
+   <th style="text-align:right;"> 14 </th>
+   <th style="text-align:right;"> 15 </th>
+   <th style="text-align:right;"> 16 </th>
+   <th style="text-align:right;"> 17 </th>
+   <th style="text-align:right;"> 18 </th>
+   <th style="text-align:right;"> 19 </th>
    <th style="text-align:right;"> 20 </th>
    <th style="text-align:right;"> 21 </th>
    <th style="text-align:right;"> 22 </th>
@@ -845,14 +842,16 @@ table(sim_df$days_absent)
    <th style="text-align:right;"> 39 </th>
    <th style="text-align:right;"> 40 </th>
    <th style="text-align:right;"> 41 </th>
-   <th style="text-align:right;"> 42 </th>
-   <th style="text-align:right;"> 43 </th>
-   <th style="text-align:right;"> 44 </th>
-   <th style="text-align:right;"> 45 </th>
   </tr>
  </thead>
 <tbody>
   <tr>
+   <td style="text-align:right;"> 140 </td>
+   <td style="text-align:right;"> 94 </td>
+   <td style="text-align:right;"> 41 </td>
+   <td style="text-align:right;"> 36 </td>
+   <td style="text-align:right;"> 38 </td>
+   <td style="text-align:right;"> 23 </td>
    <td style="text-align:right;"> 22 </td>
    <td style="text-align:right;"> 27 </td>
    <td style="text-align:right;"> 18 </td>
@@ -875,10 +874,6 @@ table(sim_df$days_absent)
    <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 5 </td>
    <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 9 </td>
-   <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 7 </td>
   </tr>
 </tbody>
 </table>
@@ -886,6 +881,10 @@ table(sim_df$days_absent)
 <table class="table" style="margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
+   <th style="text-align:right;"> 42 </th>
+   <th style="text-align:right;"> 43 </th>
+   <th style="text-align:right;"> 44 </th>
+   <th style="text-align:right;"> 45 </th>
    <th style="text-align:right;"> 46 </th>
    <th style="text-align:right;"> 47 </th>
    <th style="text-align:right;"> 48 </th>
@@ -895,6 +894,30 @@ table(sim_df$days_absent)
    <th style="text-align:right;"> 52 </th>
    <th style="text-align:right;"> 53 </th>
    <th style="text-align:right;"> 54 </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 9 </td>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 7 </td>
+  </tr>
+</tbody>
+</table>
+
+<table class="table" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
    <th style="text-align:right;"> 55 </th>
    <th style="text-align:right;"> 56 </th>
    <th style="text-align:right;"> 57 </th>
@@ -914,15 +937,6 @@ table(sim_df$days_absent)
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 8 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 6 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 7 </td>
    <td style="text-align:right;"> 2 </td>
    <td style="text-align:right;"> 6 </td>
    <td style="text-align:right;"> 3 </td>

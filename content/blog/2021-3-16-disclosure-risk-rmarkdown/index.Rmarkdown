@@ -11,6 +11,7 @@ tags:
 categories:
 layout: single
 ---
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
@@ -434,12 +435,14 @@ table(sim_df$days_absent)
 aft <- data.frame(table(sim_df$days_absent)) %>% 
   pivot_wider(names_from = Var1, values_from = Freq)
 
-par(mfrow = c(3,1))
-knitr::kable(aft[,1:20]) %>% 
+par(mfrow = c(4,1))
+knitr::kable(aft[,1:14]) %>% 
   kableExtra::kable_styling( position = "center")
-knitr::kable(aft[,21:46]) %>%
+knitr::kable(aft[,15:42]) %>%
   kableExtra::kable_styling( position = "center")
-knitr::kable(aft[,47:70]) %>%
+knitr::kable(aft[,43:55]) %>%
+  kableExtra::kable_styling( position = "center")
+knitr::kable(aft[,56:70]) %>%
   kableExtra::kable_styling( position = "center")
 
 ```
@@ -644,7 +647,7 @@ sdcobj_recode <- groupAndRename(obj = sdcobj_recode, #use sdcobj_recode object y
 Now that we have recoded our categorical variables, we can re-run the `kAnon()` function to see if our recoding reduced the amount of suppression necessary to achieve 5-anonymity. It is important to run this function on the object we saved the recoding to (`sdcobj_recode`): 
 
 
-```{r k-anon-supp, results = FALSE}
+```{r k-anon-supp, results = 'hide'}
 
 sdcobj_final <- kAnon(sdcobj_recode, #object we have been recoding
                       importance=c(1, 3, 2, 4, 5, 6, 7), 
