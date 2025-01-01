@@ -38,11 +38,10 @@ params:
   description: A modern, beautiful, and easily configurable blog theme for Hugo.
   favicon: /img/favicon.ico
   headingFontFamily: sans-serif
-  logo: /img/blogophonic-mark-dark.png
+  logo: /img/house.png
   mainSections:
     - blog
-    - project
-    - talk
+    - publications
   navallcaps: yes
   orgLocal: Anywhere
   orgName: RStudio
