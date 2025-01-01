@@ -9,20 +9,17 @@ cascade:
     show_sidebar_adunit: false
     text_link_label: View recent posts
     text_link_url: /blog/
-description: "This is a fully featured blog that supports categories, \ntags, series,
-  and pagination.\n"
 layout: list-sidebar
 show_author_byline: true
 show_post_date: true
 show_post_thumbnail: true
 sidebar:
   author: Shaina Trevino
-  description: "**This site is currently under construction** \n\nThis is a fully featured blog that supports categories,\ntags, series,
-    and pagination. Even this sidebar offers \na ton of customizations.\n\nCheck out
-    the _index.md file in the /blog folder \nto edit this content. \n"
+  description: "**This site is currently under construction** \n\n Random blog posts that have no other home. \n 
+    \n Other blogs I have written can be found on the [HEDCO Institute website](https://hedcoinstitute.uoregon.edu/ask-hedco)."
   show_sidebar_adunit: true
-  text_link_label: Subscribe via RSS
-  text_link_url: /index.xml
+  #text_link_label: Subscribe via RSS
+  #text_link_url: /index.xml
   title: Welcome
 title: Blog Posts
 ---

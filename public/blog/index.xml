@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog Posts on Shaina Trevino</title>
+    <link>https://shaina-trevino.netlify.app/blog/</link>
+    <description>Recent content in Blog Posts on Shaina Trevino</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 16 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://shaina-trevino.netlify.app/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Disclosure Risk for Student Microdata</title>
+      <link>https://shaina-trevino.netlify.app/blog/2021-3-16-disclosure-risk-rmarkdown/</link>
+      <pubDate>Tue, 16 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://shaina-trevino.netlify.app/blog/2021-3-16-disclosure-risk-rmarkdown/</guid>
+      <description>Overview   Under the Family Educational Rights and Privacy Act (FERPA), schools can release data to researchers without parent or student consent if the data is released under a FERPA study exception with a data sharing agreement or if the data has been properly de-identified. Proper data de-identification involves removing or altering all personally identifiable information (PII) from the data to minimize the disclosure risk of individuals.</description>
+    </item>
+    
+  </channel>
+</rss>

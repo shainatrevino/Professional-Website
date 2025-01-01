@@ -1,0 +1,55 @@
+---
+title: "Research Products"
+author: "Shaina Trevino"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+
+# Publications
+
+Grant, S., Schweer-Collins, M., Day, E., **Trevino, S. D.**, Steinka-Fry, K., & Tanner-Smith, E. E. (2024). Effectiveness of school-based depression prevention interventions: An overview of systematic reviews with meta-analyses on depression outcomes. *Journal of Consulting and Clinical Psychology.* Advance online publication. [https://doi.org/10.1037/ccp0000930](https://doi.org/10.1037/ccp0000930)
+
+Sileci, A.C.B., Cioffi, C.C., **Trevino, S. D.**, Fernandes, L., Capron, C.G., Kosty, D., & Mauricio, A.M. (2024). Colocation of COVID-19 vaccination services at syringe service programs for people who inject drugs and people experiencing houselessness in Oregon. *Public Health Reports*, 0(0).
+
+**Trevino, S. D.**, Kelly, N. R., Budd, E. L., & Giuliani, N. R. (2021). Parent gender affects the influence of parent emotional eating and feeding practices on child emotional eating. *Frontiers in Psychology*, 12, 654237.
+
+Giuliani, N. R., Harrington, E. M., **Trevino, S. D.** (2021). Intergenerational transmission of appetite self-regulation. *Journal of Applied Developmental Psychology*, 76, 101330.
+
+Walden, E., Hamilton, J., Harrington, E., Lopez, S., Onofrietti-Magrassi, A., Mauricci, M., **Trevino, S. D.**, Giuliani, N., & McIntyre, L. L. (2021). Intergenerational trauma: Assessment in biological mothers and preschool children. *Journal of Child & Adolescent Trauma*, 1-11.
+
+Todahl, J. L., Schnabler, S., Barkhurst, P. D., Ratliff, M., Cook, K., Franz, D., Schwartz, S., Shen, F., & **Trevino, S.**, (2021). Stewards of Children: A qualitative study of organization and community impact. *Journal of Child Sexual Abuse*, 30(2) 1-21.
+
+Harrington, E. M., **Trevino S. D.**, Lopez, S., & Giuliani, N. R. (2020). Emotion regulation in early childhood: Implications for socioemotional competence and school readiness. *Emotion*, 20(1), 48-53.
+
+Krause, M. A., **Trevino, S.**, Cripps, A., Chilton, K., & Taylor, J. P. (2019). Inclusive fitness does not impact the survival processing effect. *Animal Behavior and Cognition*, 6(1), 13-31.
+
+# Archived Datasets and Research Materials
+
+**Trevino, S. D.**, Zhang, M., Pedroza, J. P., & Schweer-Collins, M. *Turning Points for Women.* Dataset and codebook submitted to Inter-university Consortium for Political and Social Research in 2024. Awaiting DOI.
+
+Metro Nashville Public Schools. *Nashville Longitudinal Study of Youth Safety and Well-being.* Dataset and codebook submitted to Inter-university Consortium for Political and Social Research in 2023. Awaiting DOI.
+
+Grant, S., **Trevino, S. D.**, Schweer-Collins, M., Day, E., Golfen, J., Steinka-Fry, K., & Tanner-Smith, E. E. *Four-Day School Week at Primary and Secondary Schools in the United States.* Online: Open Science Framework; 2023 June. [Data, code, and materials](https://doi.org/10.17605/OSF.IO/KQYC6).
+
+Grant, S., **Trevino, S. D.**, Schweer-Collins, M., Day, E., Golfen, J., Steinka-Fry, K., & Tanner-Smith, E. E. *School-Based Interventions for Primary and Secondary Prevention of Depression.* Online: Open Science Framework; 2022 October. [Data, code, and materials](https://doi.org/10.17605/OSF.IO/C7NYZ).
+
+Grant, S., **Trevino, S. D.**, Schweer-Collins, M., Day, E., Golfen, J., Steinka-Fry, K., & Tanner-Smith, E. E. *School-Based Interventions for Primary and Secondary Prevention of Anxiety.* Online: Open Science Framework; 2023 April. [Data, code, and materials](https://doi.org/10.17605/OSF.IO/8NEA2).
+
+# Dashboards
+
+**Trevino, S. D.**, Grant, S., Day, E., Steinka-Fry, K., Cabrera, B., Hamiton, S., Martinez, S., & Tanner-Smith, E. E. (2023). *Four-day school week research database.* Interactive data dashboard. Available online at [https://hedcoinstitute.uoregon.edu/reports/four-day-school-week-research-database](https://hedcoinstitute.uoregon.edu/reports/four-day-school-week-research-database).
+
+# Handbook Chapters & Technical Reports
+
+Grant, S., Schweer-Collins, M., Day, E., **Trevino, S. D.**, Steinka-Fry, K., & Tanner-Smith, E. E. (2023). *Technical report: Do school-based prevention programs support youth? Analyzing school-based interventions for primary and secondary prevention of depression.* Open Science Framework. [https://doi.org/10.17605/OSF.IO/GSFPJ](https://doi.org/10.17605/OSF.IO/GSFPJ)
+
+Day, E., Golfen, J., Shimmel, L., Schweer-Collins, M., Grant, S., **Trevino, S.**, Steinka-Fry, K., & Tanner-Smith, E. (2023). *Do school-based prevention programs support youth?* HEDCO Institute for Evidence-Based Educational Practice, University of Oregon. [https://hedcoinstitute.uoregon.edu/reports/depression-prevention-review](https://hedcoinstitute.uoregon.edu/reports/depression-prevention-review)
+
+Grant, S., **Trevino, S. D.**, Steinka-Fry, K., Cabrera, B., Hamiton, S., Martinez, S., Day, E., & Tanner-Smith, E. E. (2023). *The four-day school week at primary and secondary schools in the United States: A scoping review of empirical research evidence.* [https://hedco-institute.github.io/4DSW_Scoping_Review/technical_report/](https://hedco-institute.github.io/4DSW_Scoping_Review/technical_report/)
+
+**Trevino, S.**, & Khurana, A. (2018). *Predictors of sexual debut.* In: Shackelford T., Weekes-Shackelford V. (eds) *Encyclopedia of Evolutionary Psychological Science.* Springer, Cham.
+
+Todahl, J., Barkhurst, P., Schnabler, S., **Trevino, S.**, Cook, K., & Ratliff, M. (2018). *The Full Aggregate Report: A Comprehensive Evaluation of Stewards of Children in Rural Oregon.* The Center for the Prevention of Abuse and Neglect, University of Oregon.
+
+

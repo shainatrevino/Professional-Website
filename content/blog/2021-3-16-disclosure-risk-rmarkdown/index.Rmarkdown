@@ -6,8 +6,8 @@ date: 2021-03-16
 author: "Shaina Trevino"
 draft: false
 images:
-series:
-tags:
+tags: 
+  - dataprivacy
 categories:
 layout: single
 ---

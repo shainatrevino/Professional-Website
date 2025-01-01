@@ -6,6 +6,8 @@ description: |
 show_header: true
 sidebar_left: true
 title: About
+draft: true #hide from live site without deleting
+hidden: true #hide page
 ---
 
 ** index doesn't contain a body, just front matter above.

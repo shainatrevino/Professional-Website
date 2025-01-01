@@ -16,7 +16,9 @@ ignoreFiles:
   - _cache$
   - \.knit\.md$
   - \.utf8\.md$
+  - ^content/hidden-blogs/
 enableEmoji: yes
+buildDrafts: false #added 12/31/24
 markup:
   defaultMarkdownHandler: goldmark
   goldmark:
@@ -46,21 +48,18 @@ params:
   orgName: RStudio
   sharing_image: /img/papillons.jpg
   social:
+    - icon: linkedin
+      icon_pack: fab
+      url: https://www.linkedin.com/in/shaina-trevino-562314163/
     - icon: github
       icon_pack: fab
-      url: https://github.com/hugo-apero/apero
-    - icon: facebook-square
-      icon_pack: fab
-      url: https://www.facebook.com/hashtag/ap%C3%A9ro
-    - icon: instagram
-      icon_pack: fab
-      url: https://www.instagram.com/explore/tags/apero/
-    - icon: twitter
-      icon_pack: fab
-      url: https://twitter.com/hashtag/apéro
-    - icon: rss
+      url: https://github.com/shainatrevino
+    - icon: graduation-cap
       icon_pack: fas
-      url: /blog/index.xml
+      url: https://scholar.google.com/citations?hl=en&user=uTz70psAAAAJ
+    - icon: envelope
+      icon_pack: fas
+      url: "mailto:strevino@uoregon.edu"
   socialInFooter: yes
   socialInHeader: no
   textFontFamily: sans-serif
@@ -77,40 +76,40 @@ taxonomies:
   series: series
   tag: tags
 menu:
-  footer:
-    - name: License
-      title: License
-      url: /license/
-      weight: 1
-    - name: Contact
-      title: Contact form
-      url: /contact/
-      weight: 2
-    - name: Contributors
-      title: Contributors
-      url: /contributors/
-      weight: 3
+  # footer:
+  #   - name: License
+  #     title: License
+  #     url: /license/
+  #     weight: 1
+  #   - name: Contact
+  #     title: Contact form
+  #     url: /contact/
+  #     weight: 2
+  #   - name: Contributors
+  #     title: Contributors
+  #     url: /contributors/
+  #     weight: 3
   header:
-    - name: About
-      title: About Apéro
-      url: /about/
+    # - name: About
+    #   title: About Apéro
+    #   url: /about/
+    #   weight: 1
+    - name: Publications
+      title: Publications
+      url: /publications/
       weight: 1
     - name: Blog
       title: Blog
       url: /blog/
       weight: 2
-    - name: Projects
-      title: Project Portfolio
-      url: /project/
-      weight: 3
-    - name: Talks
-      title: Talks
-      url: /talk/
-      weight: 4
-    - name: Publications
-      title: Element Page
-      url: /elements/
-      weight: 6
+    # - name: Projects
+    #   title: Project Portfolio
+    #   url: /project/
+    #   weight: 3
+    # - name: Talks
+    #   title: Talks
+    #   url: /talk/
+    #   weight: 4
 privacy:
   disqus:
     disable: no

@@ -21,8 +21,11 @@
         {{ partial "shared/post-details.html" . }}
       </section>
       <footer class="post-footer">
-        {{ partial "shared/post-pagination.html" . }}
-      </footer>
+  {{ if not (eq .Permalink "/publications/") }} <!-- Replace with the actual Publications permalink -->
+    {{ partial "shared/post-pagination.html" . }}
+  {{ end }}
+</footer>
+
     </article>
     {{ if .Params.show_comments }}
       {{ partial "shared/comments.html" . }}

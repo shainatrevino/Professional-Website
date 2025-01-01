@@ -1,15 +1,14 @@
 ---
-action_label: Read More &rarr;
-action_link: /about
+# action_label: Read More &rarr;
+# action_link: /about
 action_type: text
-description: I am a PhD candidate in the Prevention Science Program at the University of Oregon. My interests are in data science and quantitative research methodology with a focus on early childhood development and youth violence prevention. Currently, I am involved in projects that focus on privacy preserving data publishing, student and youth safety and well-being, and parent-child emotion and self-regulation processes. I enjoy applying my methodological skills to new challenges and collaborating with others to discover new, innovative ideas. Aside from research, I love spending time outdoors and kayaking the beautiful lakes and rivers across Oregon. 
+description: I am a Research Associate and Data Scientist at the [HEDCO Institute for Evidence-Based Educational Practice](https://hedcoinstitute.uoregon.edu/) and the [Prevention Science Insitute](https://psi.uoregon.edu/) at the University of Oregon. My work centers on leveraging data science and quantitative research methods to promote healthy child development and youth well-being. I specialize in developing efficient data science workflows for evidence syntheses and human subjects research, including computationally reproducible reporting, interactive web apps, and robust data management, harmonization, and analysis. My goal is to streamline the research process and produce accessible, actionable research products that help bridge the research-to-practice gap. Aside from research, I love spending time outdoors and kayaking the beautiful lakes and rivers across Oregon. 
 image_left: false
 images:
-- img/outside-sun-crop.jpg
+- img/UO-headshot.jpg
 show_action_link: true
-show_social_links: false #change to true to show social icons - github facebook
-subtitle: Prevention Science PhD Student #doesn't render
-subtitle: Prevention Science Institute, University of Oregon
+show_social_links: true 
+subtitle: Research Associate, University of Oregon
 text_align_left: true
 title: Shaina D. Trevino
 type: home
